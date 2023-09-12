@@ -44,7 +44,7 @@ It will ask you for a password, which by default is `vagrant`. After this, a pas
 You may need to send some files between servers for initial setup, which can be done using scp as follows:
 
 ```bash
-scp test.txt vagrant@192.168.50.11:/home/vagrant/
+scp test.txt vagrant@172.16.82.147.11:/home/vagrant/
 ```
 
 
