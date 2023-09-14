@@ -1,7 +1,6 @@
 # System Overview
 
-
-![image](https://github.com/MuhammadKhanRavl/bkmedia/assets/142044230/ba0f6acd-1306-4cd0-a022-348b8a0c2764)
+![image](https://github.com/MuhammadKhanRavl/bkmedia/assets/142044230/95fb35cb-5c4f-437d-a28e-b837f19ffd20)
 
 
 # Setting up Environment 
