@@ -1,8 +1,7 @@
 # bkmedia
 
 
-![image](https://github.com/MuhammadKhanRavl/bkmedia/assets/142044230/088ce2cf-b05c-46df-ba46-247ec5917d76)
-
+![image](https://github.com/MuhammadKhanRavl/bkmedia/assets/142044230/ba0f6acd-1306-4cd0-a022-348b8a0c2764)
 
 ---
 ## Initial Setup 
