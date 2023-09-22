@@ -1,6 +1,17 @@
+
+
+# This file sets up three VMs. Two to be clients and one to be the server. 
+# SSH Key Setup Commands:
+#   1. vagrant ssh server
+#   2. ssh-keygen
+#   3. ssh-copy-id vagrant@172.16.82.148
+#   3. ssh-copy-id vagrant@172.16.82.149
+# OR
+#   Run bash deploySSH.sh
+
+
 Vagrant.configure("2") do |config|
   config.vm.box = "bento/ubuntu-23.04-arm64" 
-
 
   # Defining clients
   config.vm.define "client1" do |server|
@@ -56,11 +67,6 @@ Vagrant.configure("2") do |config|
         chown vagrant:vagrant /home/vagrant/configs
         chmod 755 /home/vagrant/configs
 
-        # Create locations.cfg and adding clients 
-        # touch /home/vagrant/configs/locations.cfg
-        # echo "vagrant@172.16.82.148:2200:/home/vagrant/backups" >> /home/vagrant/configs/locations.cfg
-        # echo "vagrant@172.16.82.149:2233:/home/vagrant/backups" >> /home/vagrant/configs/locations.cfg
-        # chown vagrant:vagrant /home/vagrant/configs/locations.cfg
 
         # Create locations.cfg and adding clients 
         touch /home/vagrant/configs/locations.cfg
@@ -73,7 +79,6 @@ Vagrant.configure("2") do |config|
         grep -qF "$LOC1" /home/vagrant/configs/locations.cfg || echo "$LOC1" >> /home/vagrant/configs/locations.cfg
         grep -qF "$LOC2" /home/vagrant/configs/locations.cfg || echo "$LOC2" >> /home/vagrant/configs/locations.cfg
 
-
         # Create backup logs file
         touch /home/vagrant/configs/logs.cfg
         chown vagrant:vagrant /home/vagrant/configs/logs.cfg
@@ -83,24 +88,6 @@ Vagrant.configure("2") do |config|
         chown vagrant:vagrant /home/vagrant/configs/compressions.cfg
 
     SHELL
-
-    # Provisioning SSH key pairs for clients
-    #server.vm.provision "shell", inline: <<-SHELL
-
-      # Install sshpass
-      #sudo apt-get update
-      # sudo apt-get install -y sshpass
-
-      # Generate the SSH key pair
-      # [ ! -f /home/vagrant/.ssh/id_rsa ] && ssh-keygen -t rsa -f /home/vagrant/.ssh/id_rsa -N ''
-
-      # Copy the public key to client1 and client2 (might need to adjust the IPs or hostnames)
-      # sshpass -p 'vagrant' ssh-copy-id -o StrictHostKeyChecking=no -i /home/vagrant/.ssh/id_rsa.pub vagrant@172.16.82.148
-      # sshpass -p 'vagrant' ssh-copy-id -o StrictHostKeyChecking=no -i /home/vagrant/.ssh/id_rsa.pub vagrant@172.16.82.149
-    
-      # Note: default password for VMs is "vagrant". 
-
-    #SHELL
 
   end
 
