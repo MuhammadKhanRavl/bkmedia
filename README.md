@@ -8,9 +8,9 @@
 ### Vagrantfile
 
 The provided Vagrantfile completes sets up the three different VMs needed for the system in a private network. It defines static IP addresses and ports as follows:
-- **Server:** `172.16.82.147:2222`
-- **Client 1:** `172.16.82.148:2200`
-- **Client 2:** `172.16.82.149:2233`
+- **Server:** `172.16.82.147`
+- **Client 1:** `172.16.82.148`
+- **Client 2:** `172.16.82.149`
 
 The VMs can be started up using `vagrant up`. Before running this, ensure that there is no `.vagrant` folder present in the directory, as this can sometimes cause conflicts. 
 
